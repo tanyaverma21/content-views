@@ -91,6 +91,9 @@ The pagination layouts are-
    On clicking any post item image, the post details open in a popup on the frontend,
    ![image](https://github.com/tanyaverma21/content-views/assets/37866476/6d7802e8-16a3-48a3-ba8e-c16430372ded)
 
+The block has post selector feature in the back-end,
+
+![image](https://github.com/tanyaverma21/content-views/assets/37866476/72c4c6fa-0334-4d6a-8526-86782962aee5)
 
 
 
