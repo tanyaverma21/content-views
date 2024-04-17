@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     Content Views
+ * Plugin Name:     Content Views 
  * Plugin URI:      https://www.multidots.com
  * Description:     Content Views showcase different types of content types available in the system in different kinds of layouts.
  * Author:          Multidots
