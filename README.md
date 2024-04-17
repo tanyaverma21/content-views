@@ -88,6 +88,10 @@ The pagination layouts are-
 
 3. Infinite Scroll
 
+   On clicking any post item image, the post details open in a popup on the frontend,
+   ![image](https://github.com/tanyaverma21/content-views/assets/37866476/6d7802e8-16a3-48a3-ba8e-c16430372ded)
+
+
 
 
 
