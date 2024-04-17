@@ -1,0 +1,70 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "content-views/content-views-layouts",
+  "version": "0.1.0",
+  "title": "Content Views Layouts",
+  "category": "cv-layouts",
+  "icon": "dashicons dashicons-screenoptions",
+  "description": "Displays different layouts for content types",
+  "keywords": [
+    "Content",
+    "content-types",
+    "layouts"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "content-views",
+  "attributes": {
+    "postType": {
+      "type": "string",
+      "default": "post"
+    },
+    "postView": {
+      "type": "string",
+      "default": "all"
+    },
+    "postCount": {
+      "type": "number",
+      "default": 20
+    },
+    "postLayout": {
+      "type": "string",
+      "default": "grid"
+    },
+    "selectedPosts": {
+      "type": "array",
+      "default": []
+    },
+    "orderBy": {
+      "type": "string",
+      "default": "date"
+    },
+    "order": {
+      "type": "string",
+      "default": "desc"
+    },
+    "displayDate": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayAuthor": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayTaxonomies": {
+      "type": "boolean",
+      "default": true
+    },
+    "pagination": {
+      "type": "string",
+      "default": "numbers"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": [
+    "file:./view.js"
+  ]
+}

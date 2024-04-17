@@ -46,3 +46,13 @@ wp-config.php
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
+
+.DS_Store
+phpcs.xml
+phpunit.xml
+Thumbs.db
+wp-cli.local.yml
+node_modules/
+*.sql
+*.tar.gz
+*.zip
