@@ -58,7 +58,6 @@ export default function PostList(props) {
 
     return (
         <>
-        {console.log(selectedPosts, 'sele')}
         <div className="post-list">
             {newPosts?.length > 0 && newPosts.map((post, index) => (
                 <article className="post">
@@ -82,7 +81,7 @@ export default function PostList(props) {
                                 setAttributes({selectedPosts: arrayCopy});
                                 console.log(selectedPosts, 'selectedPosts');
                             }}></span>)}
-                            {index < newPosts?.lastIndex && (<span className="dashicons dashicons-arrow-down-alt" onClick={() => {
+                            {index + 1 < newPosts?.length && (<span className="dashicons dashicons-arrow-down-alt" onClick={() => {
                                 let arrayCopy2 = [...selectedPosts];
                                 arrayCopy2[index] = selectedPosts[index+1];
                                 arrayCopy2[index+1] = selectedPosts[index];

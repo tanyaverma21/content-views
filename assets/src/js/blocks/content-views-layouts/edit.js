@@ -331,7 +331,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                         options={ [
                             { label: __('Published Date', 'content-views'), value: 'date' },
                             { label: __('Post Title', 'content-views'), value: 'title' },
-                            { label: __('Selected Posts Order', 'content-views'), value: 'selected-posts' },
+                            { label: __('Selected Posts Order', 'content-views'), value: 'include' },
                         ] }
                     />
                     <SelectControl
@@ -375,7 +375,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                                 {false === editingFlag ? __("Select Posts", "howmet") : __("Save", "howmet")}
                             </button>
                             {editingFlag && (<button
-                                className="start-editing-btn is-primary components-button is-button is-default is-large"
+                                className="start-editing-btn is-primary components-button cancel is-button is-default is-large"
                                 onClick={stopEditingMode}
                             >
                                  {__("Cancel", "howmet")}
