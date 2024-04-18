@@ -138,12 +138,12 @@ class Block_Content_Views_Layouts {
 						<div class="details-popup" id="popup-<?php echo \esc_attr($post_id) ?>">
 							<button id="<?php echo \esc_attr($post_id) ?>"  class="close-button">X</button>
 							<div class="post-details">
-								<h3><?php echo get_the_title(); ?></h3>
+								<h3><?php echo wp_kses_post(get_the_title()); ?></h3>
 								<div class="post-image">
 									<img src="<?php echo esc_url($post_thumbnail) ?>" />
 								</div>
-								<div class="date">Published On: <span><?php echo get_the_date('F d, Y'); ?></span></div>
-								<div class="author">Published By: <a href="<?php echo esc_url(get_the_author_posts_link($post_id)) ?>" title="<?php echo get_the_author(); ?>"><?php echo get_the_author(); ?></a></div>
+								<div class="date">Published On: <span><?php echo wp_kses_post(get_the_date('F d, Y')); ?></span></div>
+								<div class="author">Published By: <a href="<?php echo esc_url(get_the_author_posts_link($post_id)) ?>" title="<?php echo get_the_author(); ?>"><?php echo wp_kses_post(get_the_author()); ?></a></div>
 								<div class="terms">
 									<?php 
 									if (!empty($taxonomies)):
@@ -156,7 +156,7 @@ class Block_Content_Views_Layouts {
 									endif; ?>
 								</div>
 								<div class="content">
-									<?php echo \get_the_content($post_id); ?>
+									<?php echo wp_kses_post(get_the_content($post_id)); ?>
 								</div>
 								<div class="view-post">
 									<a target="_blank" href="<?php echo esc_url(get_the_permalink()) ?>"><?php esc_html_e('View Post', 'content-views') ?></a>
@@ -176,7 +176,7 @@ class Block_Content_Views_Layouts {
 					<div class="pagination <?php echo \esc_attr($pagination); ?>">
 						<?php
 						if ('numbers' === $pagination) {
-							echo paginate_links( array(
+							echo wp_kses_post(paginate_links( array(
 								'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
 								'total'        => $post_query->max_num_pages,
 								'current'      => max( 1, get_query_var( 'paged' ) ),
@@ -190,7 +190,7 @@ class Block_Content_Views_Layouts {
 								'next_text'    => '>',
 								'add_args'     => false,
 								'add_fragment' => '',
-							) );
+							) ));
 						} elseif ('prevnext' === $pagination) {
 							previous_posts_link('>Prev', $post_query->max_num_pages);
 							next_posts_link('Next>', $post_query->max_num_pages);
@@ -238,22 +238,22 @@ class Block_Content_Views_Layouts {
 		<div class="post-title">
 			<h2 class="entry-title">
 				<a href="<?php echo esc_url(get_the_permalink($post_id)) ?>" title="<?php echo esc_attr(get_the_title($post_id)); ?>">
-					<?php echo esc_attr(get_the_title($post_id)); ?>
+					<?php echo wp_kses_post(get_the_title($post_id)); ?>
 				</a>
 			</h2>
 		</div>
 		<div class="post-excerpt">
-			<?php echo get_the_excerpt(); ?>
+			<?php echo wp_kses_post(get_the_excerpt()); ?>
 		</div>
 		<div class="post-meta">
 			<?php if ($display_date): ?>
 				<span class="post-date">
-					<?php echo get_the_date('F d, Y'); ?>
+					<?php echo wp_kses_post(get_the_date('F d, Y')); ?>
 				</span>
 			<?php endif; ?>
 			<?php if ($display_author): ?>
 				<span class="post-author">
-					<a href="<?php echo esc_url(get_the_author_posts_link($post_id)) ?>" title="<?php echo get_the_author(); ?>"><?php echo get_the_author(); ?></a>
+					<a href="<?php echo esc_url(get_the_author_posts_link($post_id)) ?>" title="<?php echo get_the_author(); ?>"><?php echo wp_kses_post(get_the_author()); ?></a>
 				</span>
 			<?php endif; ?>
 		</div><?php
@@ -284,19 +284,19 @@ class Block_Content_Views_Layouts {
 			<div class="post-meta">
 				<?php if ($display_date): ?>
 					<span class="post-date">
-						<?php echo get_the_date('F d, Y'); ?>
+						<?php echo wp_kses_post(get_the_date('F d, Y')); ?>
 					</span>
 				<?php endif; ?>
 				<?php if ($display_author): ?>
 					<span class="post-author">
-						<a href="<?php echo esc_url(get_the_author_posts_link($post_id)) ?>" title="<?php echo get_the_author(); ?>"><?php echo get_the_author(); ?></a>
+						<a href="<?php echo esc_url(get_the_author_posts_link($post_id)) ?>" title="<?php echo get_the_author(); ?>"><?php echo wp_kses_post(get_the_author()); ?></a>
 					</span>
 				<?php endif; ?>
 			</div>
 			<div class="post-title">
 				<h2 class="entry-title">
 					<a href="<?php echo esc_url(get_the_permalink($post_id)) ?>" title="<?php echo esc_attr(get_the_title($post_id)); ?>">
-						<?php echo esc_attr(get_the_title($post_id)); ?>
+						<?php echo wp_kses_post(get_the_title($post_id)); ?>
 					</a>
 				</h2>
 			</div>
@@ -308,7 +308,7 @@ class Block_Content_Views_Layouts {
 				</a>
 			</div>
 			<div class="post-excerpt">
-				<?php echo get_the_excerpt(); ?>
+				<?php echo wp_kses_post(get_the_excerpt()); ?>
 			</div>
 		</div><?php
 	}
@@ -339,7 +339,7 @@ class Block_Content_Views_Layouts {
 			<div class="post-meta">
 				<?php if ($display_date): ?>
 					<span class="post-date">
-						<?php echo get_the_date('F d, Y'); ?>
+						<?php echo wp_kses_post(get_the_date('F d, Y')); ?>
 					</span>
 				<?php endif; ?>
 			</div>
@@ -352,7 +352,7 @@ class Block_Content_Views_Layouts {
 		<div class="post-title">
 			<h2 class="entry-title">
 				<a href="<?php echo esc_url(get_the_permalink($post_id)) ?>" title="<?php echo esc_attr(get_the_title($post_id)); ?>">
-					<?php echo esc_attr(get_the_title($post_id)); ?>
+					<?php echo wp_kses_post(get_the_title($post_id)); ?>
 				</a>
 			</h2>
 		</div>
@@ -381,7 +381,7 @@ class Block_Content_Views_Layouts {
 		if (!empty($post_taxonomies) && $display_taxonomies) { ?>
 			<div class="post-entities">
 				<?php foreach ($post_taxonomies as $taxonomy) { ?>
-					<span><?php echo esc_attr($taxonomy) ?></span><?php
+					<span><?php echo esc_html($taxonomy) ?></span><?php
 				} ?>
 			</div><?php
 		} ?>
@@ -397,25 +397,25 @@ class Block_Content_Views_Layouts {
 		<div class="post-title">
 			<h2 class="entry-title">
 				<a href="<?php echo esc_url(get_the_permalink($post_id)) ?>" title="<?php echo esc_attr(get_the_title($post_id)); ?>">
-					<?php echo esc_attr(get_the_title($post_id)); ?>
+					<?php echo wp_kses_post(get_the_title($post_id)); ?>
 				</a>
 			</h2>
 		</div>
 		<div class="post-meta">
 			<?php if ($display_date): ?>
 				<span class="post-date">
-					<?php echo get_the_date('F d, Y'); ?>
+					<?php echo wp_kses_post(get_the_date('F d, Y')); ?>
 				</span>
 			<?php endif; ?>
 			<?php if ($display_author): ?>
 				/<span class="post-author">
-					<a href="<?php echo esc_url(get_the_author_posts_link($post_id)) ?>" title="<?php echo get_the_author(); ?>"><?php echo get_the_author(); ?></a>
+					<a href="<?php echo esc_url(get_the_author_posts_link($post_id)) ?>" title="<?php echo get_the_author(); ?>"><?php echo wp_kses_post(get_the_author()); ?></a>
 				</span>
 			<?php endif; ?>
 		</div>
 		<?php if ($index === 1): ?>
 			<div class="post-excerpt">
-				<?php echo get_the_excerpt(); ?>
+				<?php echo wp_kses_post(get_the_excerpt()); ?>
 			</div><?php
 		endif;
 		if ('vertical' === $post_layout && ($index > 1 && $index < 6)) { ?>
