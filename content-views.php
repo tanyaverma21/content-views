@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name:     Content Views 
- * Plugin URI:      https://www.multidots.com
+ * Plugin URI:      https://github.com/tanyaverma21/content-views/
  * Description:     Content Views showcase different types of content types available in the system in different kinds of layouts.
- * Author:          Multidots
- * Author URI:      https://www.multidots.com
+ * Author:          Tanya Verma
+ * Author URI:      https://profiles.wordpress.org/tanyaverma
  * Text Domain:     content-views
  * Domain Path:     /languages
  * Version:         1.0.0
