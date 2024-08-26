@@ -1,139 +1,142 @@
 <?php
 /**
- * The core plugin class.
+ * The plugin main class.
  *
- * @since      1.0.0
- * @package    AW_Products
- * @subpackage AW_Products/includes
- * @author     Multidots <info@multidots.com>
+ * @since   1.1.0
+ * @package content-views
  */
 
 namespace Content_Views\Includes;
 
 /**
- * Main class File.
+ * Class Content_Views.
  */
 class Content_Views {
+
 
 	/**
 	 * The unique identifier of this plugin.
 	 *
-	 * @since    1.0.0
-	 * @access   protected
-	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    string $plugin_name The string used to uniquely identify this plugin.
 	 */
 	protected $plugin_name;
 
 	/**
 	 * The current version of the plugin.
 	 *
-	 * @since    1.0.0
-	 * @access   protected
-	 * @var      string    $version    The current version of the plugin.
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    string $version The current version of the plugin.
 	 */
 	protected $version;
 
 	/**
 	 * Define the core functionality of the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
 	 */
 	public function __construct() {
-        $this->cv_setup_hooks();
+		// Setup initial hooks and actions.
+		$this->content_views_setup_hooks();
 	}
 
-    /**
+	/**
 	 * Function is used to setup local hooks.
+	 *
+	 * @return void
 	 */
-	public function cv_setup_hooks() {
-        if ( defined( 'CV_VERSION' ) ) {
-			$this->version = CV_VERSION;
+	public function content_views_setup_hooks(): void {
+		if ( defined( 'CONTENT_VIEWS_VERSION' ) ) {
+			$this->version = CONTENT_VIEWS_VERSION;
 		} else {
-			$this->version = '1.0.0';
+			$this->version = '1.1.0';
 		}
+
+		// Assigns plugin name to the member variable.
 		$this->plugin_name = 'content-views';
 
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
-		add_action( 'plugins_loaded', array( $this, 'cv_set_locale' ) );
+		// Enqueue scripts.
+		add_action( 'wp_enqueue_scripts', array( $this, 'content_views_enqueue_scripts' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'content_views_enqueue_admin_scripts' ) );
+		add_action( 'plugins_loaded', array( $this, 'content_views_set_locale' ) );
+
 		/**
 		 * The 'enqueue_block_assets' hook includes styles and scripts both in editor and frontend,
 		 * except when is_admin() is used to include them conditionally
 		 */
-		add_action( 'enqueue_block_assets', array( $this, 'enqueue_editor_assets' ) );
-		Blocks::get_instance();
+		add_action( 'enqueue_block_assets', array( $this, 'content_views_enqueue_editor_assets' ) );
+		Blocks::content_views_get_instance();
 	}
 
 	/**
 	 * Creates instance of the class.
 	 *
-	 * @return WP_Object $instance.
-	 * @since 1.0.0
+	 * @return Content_Views.
+	 * @since  1.0.0
 	 */
-	public static function get_instance() {
-        $instance = new Content_Views();
-        return $instance;
-    }
+	public static function content_views_get_instance(): Content_Views {
+		$instance = new Content_Views();
+		return $instance;
+	}
 
-    /**
+	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the AW_Products_i18n class in order to set the domain and to register the hook
-	 * with WordPress.
-	 *
-	 * @since    1.0.0
-	 * @access   private
+	 * @since  1.0.0
+	 * @access public
 	 */
-	public function cv_set_locale() {
+	public function content_views_set_locale(): void {
 		$locale = apply_filters( 'plugin_locale', get_locale(), 'content-views' );
-		load_textdomain( 'content-views', CV_DIR . '/languages/' . $locale . '.mo' );
+		load_textdomain( 'content-views', CONTENT_VIEWS_DIR . '/languages/' . $locale . '.mo' );
 		load_plugin_textdomain(
 			'content-views',
 			false,
-			dirname( dirname( CV_BASEPATH ) ) . '/languages/'
+			dirname( dirname( CONTENT_VIEWS_BASEPATH ) ) . '/languages/'
 		);
 	}
 
 	/**
-	 * Move render blocking JS to the footer.
+	 * Enqueues jquery .
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function enqueue_scripts() {
-		wp_enqueue_script( 'jquery', '/wp-includes/js/jquery/jquery.min.js', array(), CV_VERSION, true );
+	public function content_views_enqueue_scripts(): void {
+		wp_enqueue_script( 'jquery', '/wp-includes/js/jquery/jquery.min.js', array(), CONTENT_VIEWS_VERSION, true );
 	}
 
 	/**
-	 * Enqueue admin js.
+	 * Enqueue admin script.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function enqueue_admin_scripts() {
-		wp_enqueue_script( 'cv-admin-js', CV_URL.'assets/src/js/admin.js', array('jquery'), CV_VERSION, true );
+	public function content_views_enqueue_admin_scripts(): void {
+		wp_enqueue_script( 'content-views-admin-js', CONTENT_VIEWS_URL . 'assets/src/js/admin.js', array( 'jquery' ), CONTENT_VIEWS_VERSION, true );
 	}
 
 	/**
 	 * Enqueue editor scripts and styles.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function enqueue_editor_assets() {
+	public function content_views_enqueue_editor_assets(): void {
 		if ( is_admin() || has_block( 'content-views/content-views-layouts' ) ) {
 			wp_enqueue_script(
-				'cv-slick-js',
-				CV_URL . 'assets/src/js/slick.min.js',
+				'content-views-slick-js',
+				CONTENT_VIEWS_URL . 'assets/src/js/slick.min.js',
 				array( 'jquery' ),
-				filemtime( CV_PATH . '/assets/src/js/slick.min.js' ),
+				filemtime( CONTENT_VIEWS_PATH . '/assets/src/js/slick.min.js' ),
 				true
 			);
 			wp_enqueue_style(
-				'cv-slick-css',
-				CV_URL . 'assets/src/css/slick.min.css',
+				'content-views-slick-css',
+				CONTENT_VIEWS_URL . 'assets/src/css/slick.min.css',
 				array(),
-				filemtime( CV_PATH . '/assets/src/css/slick.min.css' ),
+				filemtime( CONTENT_VIEWS_PATH . '/assets/src/css/slick.min.css' ),
 				'all'
 			);
 		}
@@ -142,9 +145,9 @@ class Content_Views {
 		$blocks = \WP_Block_Type_Registry::get_instance()->get_all_registered();
 		foreach ( $blocks as $block ) {
 			if ( has_block( $block->name ) ) {
+				// Enqueue block styles.
 				wp_enqueue_style( $block->style );
 			}
 		}
 	}
-
 }

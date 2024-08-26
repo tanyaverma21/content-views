@@ -1,13 +1,13 @@
 === Content Views ===
-Contributors: tanyaverma
-Donate link: https://profiles.wordpress.org/tanyaverma
+Contributors: Tanya Chopra
+Author link: https://profiles.wordpress.org/tanyaverma
 Tags: content, views
 Requires at least: 4.5
 Tested up to: 6.4.3
 Requires PHP: 5.6
-Stable tag: 1.0.0
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Stable tag: 1.1.0
+License: GPLv3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Content Views showcase different types of content types available in the system in different kinds of layouts.
 
@@ -51,4 +51,10 @@ Some key features of the GB block available with the plugin are-
 
 == Changelog ==
 
-No change log found.
+* 1.1.0
+
+1. Updated prefixes for the variables and method names.
+2. Added license information in the main plugin header and readme files.
+3. Introduced composer.
+4. Introduced strict typing in methods.
+5. Updated file comments.

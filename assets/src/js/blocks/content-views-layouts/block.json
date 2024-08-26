@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"name": "content-views/content-views-layouts",
-	"version": "0.1.0",
+	"version": "1.1.0",
 	"title": "Content Views Layouts",
-	"category": "cv-layouts",
+	"category": "content-views-layouts",
 	"icon": "dashicons dashicons-screenoptions",
 	"description": "Displays different layouts for content types",
 	"keywords": ["Content", "content-types", "layouts"],

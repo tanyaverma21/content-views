@@ -1,10 +1,20 @@
 # Content Views
 
-Content Views showcase different types of content types available in the system in different kinds of layouts.
+Contributors: Tanya Chopra
+Author link: https://profiles.wordpress.org/tanyaverma
+Tags: content, views
+Requires at least: 4.5
+Tested up to: 6.4.3
+Requires PHP: 5.6
+Stable tag: 1.1.0
+License: GPLv3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 # Description
 
 Content views is a plugin that enhances the features of views of the content available on your site. It works with default post types of the WordPress alongwith the custom post types if there are any.
+
+Content Views showcase different types of content types available in the system in different kinds of layouts.
 
 The plugin comes with a variety of layouts to showcase the content available on the site on the frontend. It works with the help of a block Content Views Layout that is required to be added on a Page on the site to make it work.
 
@@ -42,7 +52,10 @@ Some key features of the GB block available with the plugin are-
 
 # Changelog
 
-No change log found.
+* 1.1.0
+
+1. Updated prefixes for the variables and method names.
+2. Added license information in the main plugin header and readme files.
 
 # Screenshots
 
@@ -94,7 +107,3 @@ The pagination layouts are-
 The block has post selector feature in the back-end,
 
 ![image](https://github.com/tanyaverma21/content-views/assets/37866476/72c4c6fa-0334-4d6a-8526-86782962aee5)
-
-
-
-

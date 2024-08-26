@@ -1,6 +1,6 @@
 <?php
 /**
- * Autoloader file for theme.
+ * Autoloader file for plugin.
  *
  * @package content-views
  */
@@ -10,26 +10,26 @@ namespace Content_Views\Includes;
 /**
  * Auto loader function.
  *
- * @param string $resource Source namespace.
+ * @param string $file_resource Source namespace.
  *
  * @return void
  */
-function autoloader( $resource = '' ) {
+function autoloader( string $file_resource = '' ): void {
 	$resource_path  = false;
 	$namespace_root = 'Content_Views\\';
-	$resource       = trim( $resource, '\\' );
+	$file_resource  = trim( $file_resource, '\\' );
 
-	if ( empty( $resource ) || strpos( $resource, '\\' ) === false || strpos( $resource, $namespace_root ) !== 0 ) {
+	// Return if resource is not present.
+	if ( empty( $file_resource ) || strpos( $file_resource, '\\' ) === false || strpos( $file_resource, $namespace_root ) !== 0 ) {
 		// Not our namespace, bail out.
 		return;
 	}
 
 	// Remove our root namespace.
-	$resource = str_replace( $namespace_root, '', $resource );
-
-	$path = explode(
+	$file_resource = str_replace( $namespace_root, '', $file_resource );
+	$path          = explode(
 		'\\',
-		str_replace( '_', '-', strtolower( $resource ) )
+		str_replace( '_', '-', strtolower( $file_resource ) )
 	);
 
 	/**
@@ -40,11 +40,12 @@ function autoloader( $resource = '' ) {
 		return;
 	}
 
+	// Define directory and file_name as empty initially.
 	$directory = '';
 	$file_name = '';
 
+	// Checks if path has includes directory.
 	if ( 'includes' === $path[0] ) {
-
 		switch ( $path[1] ) {
 			case 'classes':
 				$directory = 'classes';
@@ -63,20 +64,19 @@ function autoloader( $resource = '' ) {
 				}
 		}
 
-		$resource_path = sprintf( '%s/includes/%s/%s.php', untrailingslashit( CV_DIR ), $directory, $file_name );
-
+		// Prepares resource path.
+		$resource_path = sprintf( '%s/includes/%s/%s.php', untrailingslashit( CONTENT_VIEWS_DIR ), $directory, $file_name );
 	}
 
 	/**
 	 * If $is_valid_file has 0 means valid path or 2 means the file path contains a Windows drive path.
 	 */
 	$is_valid_file = validate_file( $resource_path );
-
 	if ( ! empty( $resource_path ) && file_exists( $resource_path ) && ( 0 === $is_valid_file || 2 === $is_valid_file ) ) {
 		// We already making sure that file is exists and valid.
-		require_once( $resource_path ); // phpcs:ignore
+     require_once( $resource_path ); // phpcs:ignore
 	}
-
 }
 
+// Registers the autoloader.
 spl_autoload_register( '\Content_Views\Includes\autoloader' );

@@ -1,15 +1,17 @@
 <?php
 /**
- * Plugin Name:     Content Views 
+ * Plugin Name:     Content Views
  * Plugin URI:      https://github.com/tanyaverma21/content-views/
  * Description:     Content Views showcase different types of content types available in the system in different kinds of layouts.
- * Author:          Tanya Verma
+ * Author:          Tanya Chopra
  * Author URI:      https://profiles.wordpress.org/tanyaverma
  * Text Domain:     content-views
  * Domain Path:     /languages
- * Version:         1.0.0
+ * Version:         1.1.0
  *
- * @package         Content_Views
+ * @package content-views
+ * @license http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License, version 3 or higher
+ * License:         GPLv3
  */
 
 namespace Content_Views;
@@ -19,26 +21,32 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'CV_VERSION', '1.0.0' );
-define( 'CV_URL', plugin_dir_url( __FILE__ ) );
-define( 'CV_DIR', plugin_dir_path( __FILE__ ) );
-define( 'CV_BASEPATH', plugin_basename( __FILE__ ) );
-define( 'CV_PLACEHOLDER_IMG', CV_URL . 'assets/src/images/placeholder.png' );
-define( 'CV_PLACEHOLDER_THUMB_IMG', CV_URL . 'assets/src/images/placeholder-150x150.png' );
+// Constants.
+define( 'CONTENT_VIEWS_VERSION', '1.1.0' );
+define( 'CONTENT_VIEWS_URL', plugin_dir_url( __FILE__ ) );
+define( 'CONTENT_VIEWS_DIR', plugin_dir_path( __FILE__ ) );
+define( 'CONTENT_VIEWS_BASEPATH', plugin_basename( __FILE__ ) );
+define( 'CONTENT_VIEWS_PLACEHOLDER_IMG', CONTENT_VIEWS_URL . 'assets/src/images/placeholder.png' );
+define( 'CONTENT_VIEWS_PLACEHOLDER_THUMB_IMG', CONTENT_VIEWS_URL . 'assets/src/images/placeholder-150x150.png' );
 
-if ( ! defined( 'CV_PATH' ) ) {
-	define( 'CV_PATH', __DIR__ );
+// Plugin path.
+if ( ! defined( 'CONTENT_VIEWS_PATH' ) ) {
+	define( 'CONTENT_VIEWS_PATH', __DIR__ );
 }
 
 // Load the autoloader.
-require_once CV_DIR . '/includes/autoloader.php';
+require_once CONTENT_VIEWS_DIR . '/includes/autoloader.php';
+
 
 /**
  * Begins execution of the plugin.
  *
- * @since    1.0.0
+ * @since  1.0.0
+ * @return void
  */
-function initialize() {
+function content_views_initialize(): void {
 	new \Content_Views\Includes\Content_Views();
-}
-initialize();
+}//end content_views_initialize()
+
+
+content_views_initialize();

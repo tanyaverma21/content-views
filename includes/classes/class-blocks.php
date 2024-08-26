@@ -2,82 +2,85 @@
 /**
  * Dynamic Blocks.
  *
- * @package howmet
+ * @package content-views
  */
 
 namespace Content_Views\Includes;
 
 /**
- * Class Blocks
+ * Class Blocks.
  */
 class Blocks {
 
-    /**
-     * @var $this->block_content_views_layouts.
-     */
-    protected $block_content_views_layouts;
+	/**
+	 * Block_Content_Views_Layouts Class instance.
+	 *
+	 * @var $block_content_views_layouts
+	 */
+	protected $block_content_views_layouts;
 
 	/**
 	 * Construct method.
 	 */
 	protected function __construct() {
-		$this->cv_setup_hooks();
+		// Setup initial hooks and actions.
+		$this->content_views_setup_hooks();
 	}
 
 	/**
 	 * To register action/filter.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	protected function cv_setup_hooks() {
+	protected function content_views_setup_hooks(): void {
 		/**
 		 * Load blocks classes.
 		 */
-		$this->block_content_views_layouts = Blocks\Block_Content_Views_Layouts::get_instance();
-		add_action( 'init', array( $this, 'cv_register_blocks' ) );
-		add_filter( 'block_categories_all', array( $this, 'cv_register_block_category' ) );
+		$this->block_content_views_layouts = Blocks\Block_Content_Views_Layouts::content_views_get_instance();
+		add_action( 'init', array( $this, 'content_views_register_blocks' ) );
+		add_filter( 'block_categories_all', array( $this, 'content_views_register_block_category' ) );
 	}
 
 	/**
 	 * Register blocks.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since  1.0.0
 	 */
-	public function cv_register_blocks() {
+	public function content_views_register_blocks(): void {
 		register_block_type(
-			CV_PATH . '/assets/build/js/blocks/content-views-layouts',
+			CONTENT_VIEWS_PATH . '/assets/build/js/blocks/content-views-layouts',
 			array(
-				'render_callback' => array($this->block_content_views_layouts, 'render_callback'),
+				'render_callback' => array( $this->block_content_views_layouts, 'content_views_render_callback' ),
 			)
 		);
 	}
 
-    /**
+	/**
 	 * Creates instance of the class.
 	 *
-	 * @return WP_Object $instance.
-	 * @since 1.0.0
+	 * @return Blocks.
+	 * @since  1.0.0
 	 */
-	public static function get_instance() {
-        $instance = new Blocks();
-        return $instance;
-    }
+	public static function content_views_get_instance(): Blocks {
+		$instance = new Blocks();
+		return $instance;
+	}
 
 	/**
-	 * Register Custom Block Category
+	 * Register Custom Block Category.
 	 *
-	 * @param string $categories return categories array.
+	 * @param array $categories return categories array.
 	 *
-	 * @return string
-	 * @since 1.0.0
+	 * @return array
+	 * @since  1.0.0
 	 */
-	public function cv_register_block_category( $categories ) {
+	public function content_views_register_block_category( array $categories ): array {
 		return array_merge(
 			array(
 				array(
-					'slug'  => 'cv-layouts',
+					'slug'  => 'content-views-layouts',
 					'title' => __( 'Content Views', 'content-views' ),
 					'icon'  => 'screenoptions',
 				),
