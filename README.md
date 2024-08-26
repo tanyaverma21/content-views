@@ -1,14 +1,14 @@
 # Content Views
 
-Contributors: Tanya Chopra
-Author link: https://profiles.wordpress.org/tanyaverma
-Tags: content, views
-Requires at least: 4.5
-Tested up to: 6.4.3
-Requires PHP: 5.6
-Stable tag: 1.1.0
-License: GPLv3
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+* Contributors: Tanya Chopra
+* Author link: https://profiles.wordpress.org/tanyaverma
+* Tags: content, views
+* Requires at least: 4.5
+* Tested up to: 6.6
+* Requires PHP: 5.6
+* Stable tag: 1.1.0
+* License: GPLv3
+* License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 # Description
 
@@ -56,6 +56,9 @@ Some key features of the GB block available with the plugin are-
 
 1. Updated prefixes for the variables and method names.
 2. Added license information in the main plugin header and readme files.
+3. Introduced composer.
+4. Introduced strict typing in methods.
+5. Updated file comments.
 
 # Screenshots
 
