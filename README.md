@@ -6,7 +6,7 @@
 * Requires at least: 4.5
 * Tested up to: 6.6.1
 * Requires PHP: 5.6
-* Stable tag: 1.1.0
+* Stable tag: 1.1.1
 * License: GPLv3
 * License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -59,6 +59,12 @@ Some key features of the GB block available with the plugin are-
 3. Introduced composer.
 4. Introduced strict typing in methods.
 5. Updated file comments.
+
+* 1.1.1
+
+1. Tested plugin upto WP version 6.6.1.
+2. Added missed fonts and image for slick slider.
+3. Added dependency of jquery within viewScript dependency array in block.json of block.
 
 # Screenshots
 

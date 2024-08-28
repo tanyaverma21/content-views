@@ -2,7 +2,7 @@
 /**
  * The plugin main class.
  *
- * @since   1.1.0
+ * @since   1.0.0
  * @package content-views
  */
 
@@ -51,7 +51,7 @@ class Content_Views {
 		if ( defined( 'CONTENT_VIEWS_VERSION' ) ) {
 			$this->version = CONTENT_VIEWS_VERSION;
 		} else {
-			$this->version = '1.1.0';
+			$this->version = '1.1.1';
 		}
 
 		// Assigns plugin name to the member variable.

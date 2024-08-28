@@ -1,7 +1,7 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"name": "content-views/content-views-layouts",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"title": "Content Views Layouts",
 	"category": "content-views-layouts",
 	"icon": "dashicons dashicons-screenoptions",
