@@ -4,7 +4,7 @@
 * Author link: https://profiles.wordpress.org/tanyaverma
 * Tags: content, views
 * Requires at least: 4.5
-* Tested up to: 6.6
+* Tested up to: 6.6.1
 * Requires PHP: 5.6
 * Stable tag: 1.1.0
 * License: GPLv3

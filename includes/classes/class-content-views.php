@@ -58,7 +58,6 @@ class Content_Views {
 		$this->plugin_name = 'content-views';
 
 		// Enqueue scripts.
-		add_action( 'wp_enqueue_scripts', array( $this, 'content_views_enqueue_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'content_views_enqueue_admin_scripts' ) );
 		add_action( 'plugins_loaded', array( $this, 'content_views_set_locale' ) );
 
@@ -95,16 +94,6 @@ class Content_Views {
 			false,
 			dirname( dirname( CONTENT_VIEWS_BASEPATH ) ) . '/languages/'
 		);
-	}
-
-	/**
-	 * Enqueues jquery .
-	 *
-	 * @return void
-	 * @since  1.0.0
-	 */
-	public function content_views_enqueue_scripts(): void {
-		wp_enqueue_script( 'jquery', '/wp-includes/js/jquery/jquery.min.js', array(), CONTENT_VIEWS_VERSION, true );
 	}
 
 	/**
