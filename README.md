@@ -1,6 +1,6 @@
 # Content Views
 
-* Contributors: Tanya Chopra
+* Contributors: tanyaverma
 * Author link: https://profiles.wordpress.org/tanyaverma
 * Tags: content, views
 * Requires at least: 4.5
@@ -9,6 +9,8 @@
 * Stable tag: 1.1.1
 * License: GPLv3
 * License URI: https://www.gnu.org/licenses/gpl-3.0.html
+
+Content Views showcase different types of content types available in the system in different kinds of layouts.
 
 # Description
 
@@ -50,21 +52,37 @@ Some key features of the GB block available with the plugin are-
 3. Go to any WP page and add the Content Views Layouts GB block to the page editor.
 4. Do the required block configurations and that's it, your content is ready to view on the frontend.
 
-# Changelog
+# Frequently Asked Questions
 
-* 1.1.0
+1. What types of layouts does the Content Views plugin offer?
 
-1. Updated prefixes for the variables and method names.
-2. Added license information in the main plugin header and readme files.
-3. Introduced composer.
-4. Introduced strict typing in methods.
-5. Updated file comments.
+The Content Views plugin provides several layout options to display your content, including:
 
-* 1.1.1
+* Tiles
+* Grid
+* Single-line Scrollable
+* Double-line Scrollable
+* 1-4 Posts Vertical Layout
+* 1-4 Posts Horizontal Layout
+* Collapsible
+  
+These layouts help you present your content in various engaging formats.
 
-1. Tested plugin upto WP version 6.6.1.
-2. Added missed fonts and image for slick slider.
-3. Added dependency of jquery within viewScript dependency array in block.json of block.
+2. How do I configure visibility settings for my posts?
+
+You can configure visibility settings directly within the Content Views block. Options include showing or hiding post date, post author, and taxonomies. These settings allow you to tailor the display of your content based on your needs.
+
+3. Can I sort posts using the Content Views plugin?
+
+Yes, the plugin provides sorting options for posts. You can sort by title, date, or a custom order that you select. This feature helps in organizing and presenting content in a way that best suits your site’s layout and audience.
+
+4. How does the plugin handle custom post types?
+
+The Content Views plugin is fully compatible with both default WordPress post types and custom post types. You can easily display and manage content from custom post types using the plugin’s flexible layout and configuration options.
+
+5. Is the Content Views plugin responsive?
+
+Yes, the plugin is designed to be responsive. This ensures that your content views look great and function properly on all devices, including desktops, tablets, and smartphones.
 
 # Screenshots
 
@@ -116,3 +134,28 @@ The pagination layouts are-
 The block has post selector feature in the back-end,
 
 ![image](https://github.com/tanyaverma21/content-views/assets/37866476/72c4c6fa-0334-4d6a-8526-86782962aee5)
+
+# Changelog
+
+* 1.1.0
+
+1. Updated prefixes for the variables and method names.
+2. Added license information in the main plugin header and readme files.
+3. Introduced composer.
+4. Introduced strict typing in methods.
+5. Updated file comments.
+
+* 1.1.1
+
+1. Tested plugin upto WP version 6.6.1.
+2. Added missed fonts and image for slick slider.
+3. Added dependency of jquery within viewScript dependency array in block.json of block.
+
+# Upgrade Notice
+
+To benefit from plugin's exciting new features, enhanced security and performance, please update the Content Views plugin from your WordPress dashboard.
+We appreciate your continued support and feedback as we strive to make Content Views even better.
+
+Thank you for using Content Views!
+
+— The Content Views Team
