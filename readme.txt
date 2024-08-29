@@ -51,7 +51,7 @@ Some key features of the GB block available with the plugin are-
 
 == Frequently Asked Questions ==
 
-1. What types of layouts does the Content Views plugin offer?
+= What types of layouts does the Content Views plugin offer? =
 
 The Content Views plugin provides several layout options to display your content, including:
 
@@ -64,19 +64,19 @@ The Content Views plugin provides several layout options to display your content
     * Collapsible
 These layouts help you present your content in various engaging formats.
 
-2. How do I configure visibility settings for my posts?
+= How do I configure visibility settings for my posts? =
 
 You can configure visibility settings directly within the Content Views block. Options include showing or hiding post date, post author, and taxonomies. These settings allow you to tailor the display of your content based on your needs.
 
-3. Can I sort posts using the Content Views plugin?
+= Can I sort posts using the Content Views plugin? =
 
 Yes, the plugin provides sorting options for posts. You can sort by title, date, or a custom order that you select. This feature helps in organizing and presenting content in a way that best suits your site’s layout and audience.
 
-4. How does the plugin handle custom post types?
+= How does the plugin handle custom post types? =
 
 The Content Views plugin is fully compatible with both default WordPress post types and custom post types. You can easily display and manage content from custom post types using the plugin’s flexible layout and configuration options.
 
-5. Is the Content Views plugin responsive?
+= Is the Content Views plugin responsive? =
 
 Yes, the plugin is designed to be responsive. This ensures that your content views look great and function properly on all devices, including desktops, tablets, and smartphones.
 
