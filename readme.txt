@@ -1,5 +1,5 @@
 === Content Views ===
-Contributors: Tanya Chopra
+Contributors: tanyaverma
 Author link: https://profiles.wordpress.org/tanyaverma
 Tags: content, views
 Requires at least: 4.5
@@ -49,6 +49,87 @@ Some key features of the GB block available with the plugin are-
 3. Go to any WP page and add the Content Views Layouts GB block to the page editor.
 4. Do the required block configurations and that's it, your content is ready to view on the frontend.
 
+== Frequently Asked Questions ==
+
+1. What types of layouts does the Content Views plugin offer?
+
+The Content Views plugin provides several layout options to display your content, including:
+
+    * Tiles
+    * Grid
+    * Single-line Scrollable
+    * Double-line Scrollable
+    * 1-4 Posts Vertical Layout
+    * 1-4 Posts Horizontal Layout
+    * Collapsible
+These layouts help you present your content in various engaging formats.
+
+2. How do I configure visibility settings for my posts?
+
+You can configure visibility settings directly within the Content Views block. Options include showing or hiding post date, post author, and taxonomies. These settings allow you to tailor the display of your content based on your needs.
+
+3. Can I sort posts using the Content Views plugin?
+
+Yes, the plugin provides sorting options for posts. You can sort by title, date, or a custom order that you select. This feature helps in organizing and presenting content in a way that best suits your site’s layout and audience.
+
+4. How does the plugin handle custom post types?
+
+The Content Views plugin is fully compatible with both default WordPress post types and custom post types. You can easily display and manage content from custom post types using the plugin’s flexible layout and configuration options.
+
+5. Is the Content Views plugin responsive?
+
+Yes, the plugin is designed to be responsive. This ensures that your content views look great and function properly on all devices, including desktops, tablets, and smartphones.
+
+== Screenshot ==
+
+1. **Tiles Layout** 
+   This screenshot shows the Tiles layout for the content views layout block.
+   [[Image: screenshot-1.png]]
+
+2. **Grid Layout** 
+   This screenshot shows the Grid layout for the content views layout block.
+   [[Image: screenshot-2.png]]
+
+3. **Double-Row Scrollable Layout** 
+   This screenshot shows the Double-Row Scrollable layout for the content views layout block.
+   [[Image: screenshot-3.png]]
+
+4. **Single-Row Scrollable Layout** 
+   This screenshot shows the Single-Row Scrollable layout for the content views layout block.
+   [[Image: screenshot-4.png]]
+
+5. **1-4 Posts Vertical Layout** 
+   This screenshot shows the 1-4 Posts Vertical layout for the content views layout block.
+   [[Image: screenshot-5.png]]
+
+6. **1-4 Posts Horizontal Layout** 
+   This screenshot shows the 1-4 Posts Horizontal layout for the content views layout block.
+   [[Image: screenshot-6.png]]
+
+7. **Collapsible Layout** 
+   This screenshot shows the Collapsible layout for the content views layout block.
+   [[Image: screenshot-7.png]]
+
+8. **Pagination Style-1,2..n** 
+   This screenshot shows the 1,2,..n pagination style for the content views layout block.
+   [[Image: screenshot-8.png]]
+
+9. **Pagination Style-Previous Next<>** 
+   This screenshot shows the Previous Next<> pagination style for the content views layout block.
+   [[Image: screenshot-9.png]]
+
+10. **Content Details Popup** 
+   This screenshot shows the content details popup, which is opened on click of individual content-item click in the content views layout block.
+   [[Image: screenshot-10.png]]
+
+11. **Content Views Layout Block Configurations**
+    This screenshot shows the block configurations for the Content Views Layout block.
+   [[Image: screenshot-11.png]]
+
+12. **Post Selector Block Configurations**
+    This screenshot shows the post selector configurations for the Content Views Layout block in case when Selected Posts are to be displayed in the block.
+   [[Image: screenshot-12.png]]
+
 == Changelog ==
 
 * 1.1.0
@@ -64,3 +145,12 @@ Some key features of the GB block available with the plugin are-
 1. Tested plugin upto WP version 6.6.1.
 2. Added missed fonts and image for slick slider.
 3. Added dependency of jquery within viewScript dependency array in block.json of block.
+
+== Upgrade Notice ==
+
+To benefit from plugin's exciting new features, enhanced security and performance, please update the Content Views plugin from your WordPress dashboard.
+We appreciate your continued support and feedback as we strive to make Content Views even better.
+
+Thank you for using Content Views!
+
+— The Content Views Team
