@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
     /**
-     * Event handler for collapsible layout in content views block.
+     * Event handler for collapsible layout in content layout block.
      */
     jQuery( '.collapsible-content' ).hide();
     jQuery( '.collapsible-header' ).on( 'click', function () {

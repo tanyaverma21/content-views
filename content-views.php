@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name:     Content Views
+ * Plugin Name:     Content Layouts
  * Plugin URI:      https://github.com/tanyaverma21/content-views/
- * Description:     Content Views showcase different types of content types available in the system in different kinds of layouts.
+ * Description:     Content Layouts showcase different types of content types available in the system in different kinds of layouts.
  * Author:          Tanya Chopra
  * Author URI:      https://profiles.wordpress.org/tanyaverma
  * Text Domain:     content-views
  * Domain Path:     /languages
- * Version:         1.1.1
+ * Version:         1.1.3
  *
  * @package content-views
  * @license http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License, version 3 or higher
@@ -22,7 +22,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Constants.
-define( 'CONTENT_VIEWS_VERSION', '1.1.1' );
+define( 'CONTENT_VIEWS_VERSION', '1.1.3' );
 define( 'CONTENT_VIEWS_URL', plugin_dir_url( __FILE__ ) );
 define( 'CONTENT_VIEWS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'CONTENT_VIEWS_BASEPATH', plugin_basename( __FILE__ ) );

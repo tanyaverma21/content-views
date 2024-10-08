@@ -51,7 +51,7 @@ class Content_Views {
 		if ( defined( 'CONTENT_VIEWS_VERSION' ) ) {
 			$this->version = CONTENT_VIEWS_VERSION;
 		} else {
-			$this->version = '1.1.1';
+			$this->version = '1.1.3';
 		}
 
 		// Assigns plugin name to the member variable.

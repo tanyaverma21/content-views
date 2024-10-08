@@ -1,6 +1,6 @@
 <?php
 /**
- * Register Content Views Layouts block.
+ * Register Content Layouts block.
  *
  * @package content-views
  */

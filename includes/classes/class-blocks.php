@@ -80,8 +80,8 @@ class Blocks {
 		return array_merge(
 			array(
 				array(
-					'slug'  => 'content-views-layouts',
-					'title' => __( 'Content Views', 'content-views' ),
+					'slug'  => 'content-layouts',
+					'title' => __( 'Content Layouts', 'content-views' ),
 					'icon'  => 'screenoptions',
 				),
 			),
